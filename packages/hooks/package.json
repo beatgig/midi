@@ -1,0 +1,29 @@
+{
+  "name": "@beatgig/hooks",
+  "version": "1.0.0",
+  "description": "A collection of useful React hooks.",
+  "author": "Elving Rodriguez",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist/commonjs",
+    "dist/esm"
+  ],
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@beatgig/array": "^1.0.0",
+    "@beatgig/function": "^1.0.0",
+    "@beatgig/is": "^1.0.0",
+    "@beatgig/url": "^1.0.0",
+    "react": "^16.8.6"
+  }
+}

@@ -1,0 +1,7 @@
+.log
+.DS_Store
+.jest-*
+dist
+node_modules
+lerna-debug.log
+yarn-error.log

@@ -1,0 +1,7 @@
+export { default as compact } from './compact'
+export { default as filterByKey } from './filterByKey'
+export { default as flatten } from './flatten'
+export { default as last } from './last'
+export { default as toArray } from './toArray'
+export { default as unique } from './unique'
+export { default as updateArrayItem } from './updateArrayItem'

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "checkJs": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "paths": {
+      "@beatgig/*": ["./packages/*/src/index.js"]
+    },
+    "target": "es6"
+  },
+  "exclude": [
+    "node_modules",
+    "./packages/**/__tests__",
+    "./packages/**/src/**/*.spec.js",
+    "./packages/**/src/**/*.story.js"
+  ],
+  "include": ["./packages/**/src"]
+}
