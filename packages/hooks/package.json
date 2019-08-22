@@ -23,7 +23,9 @@
     "@beatgig/array": "^1.0.0",
     "@beatgig/function": "^1.0.0",
     "@beatgig/is": "^1.0.0",
-    "@beatgig/url": "^1.0.0",
+    "@beatgig/url": "^1.0.0"
+  },
+  "peerDependencies": {
     "react": "^16.8.6"
   }
 }
