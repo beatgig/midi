@@ -5,8 +5,8 @@ const loadedScripts = []
 /**
  * Injects a script tag with the given `src`.
  *
- * @param {string} src
- * @returns {boolean[]}
+ * @param {string} src - The source url of the script to be loaded.
+ * @returns {boolean[]} - Two boolean flags to determine if the script failed or was loaded.
  */
 const useScript = (src) => {
   /**

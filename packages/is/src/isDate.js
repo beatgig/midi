@@ -3,8 +3,8 @@ import isNil from './isNil'
 /**
  * Validates that the given value a valid date.
  *
- * @param {*} value
- * @return {boolean} - Returns true if the value is a valid date, e.g., `"2/1/1999"`.
+ * @param {*} value - The value to be evaluated.
+ * @returns {boolean} - Returns true if the value is a valid date, e.g., `"2/1/1999"`.
  */
 const isDate = (value) => {
   const date = new Date(value)

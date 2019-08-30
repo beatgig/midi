@@ -5,7 +5,7 @@ import usePreviousValue from './usePreviousValue'
 /**
  * Scrolls window to the top whenever the given `location` pathname changes.
  *
- * @param {object} location
+ * @param {object} location - A valid location object.
  */
 const useScrollToTop = (location) => {
   const previousPathName = usePreviousValue(location.pathname)
@@ -18,4 +18,3 @@ const useScrollToTop = (location) => {
 }
 
 export default useScrollToTop
-

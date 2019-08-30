@@ -32,7 +32,10 @@ const LOADED = 'LOADED'
 const FAILED = 'FAILED'
 
 /**
- * @returns {State}
+ * @param {object} state - The current state of the reducer.
+ * @param {object} action - The next action to be executed.
+ * @param {string} action.type - The action's type.
+ * @returns {State} - The next state of th reducer.
  */
 const reducer = (state, action) => {
   switch (action.type) {
@@ -70,7 +73,7 @@ const reducer = (state, action) => {
  * Returns the state of an image, given a `src`.
  *
  * @param {string} src - source of the image to load
- * @returns {State}
+ * @returns {State} - The current state of the image that's been loaded.
  */
 const useImage = (src) => {
   const [state, dispatch] = useReducer(reducer, {

@@ -19,10 +19,10 @@ const useDebouncedValue = (value, delay = 0) => {
     /**
      * Delay setting the value on to `debouncedValue` after the given `delay`.
      */
-    debounced(value)
+    const cancel = debounced(value)
 
     return () => {
-      debounced.cancel()
+      cancel()
     }
   }, [value, delay])
 

@@ -15,6 +15,7 @@
     "lib": "src",
     "test": "__tests__"
   },
+  "types": "dist/types.d.ts",
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },

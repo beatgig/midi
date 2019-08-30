@@ -1,8 +1,8 @@
 /**
  * Returns `true` if the given `value` is a DOM element.
  *
- * @param {*} value
- * @returns {boolean}
+ * @param {*} value - The value to be evaluated.
+ * @returns {boolean} - A boolean flag that determines if the given `value` is a valid DOM element.
  */
 const isElement = (value) => value instanceof HTMLElement
 

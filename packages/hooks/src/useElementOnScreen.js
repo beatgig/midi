@@ -9,9 +9,9 @@ import { useEffect, useRef, useState } from 'react'
 /**
  * Detects when the given element (tracked by `ref`) is visible on the viewport.
  *
- * @param {object} ref - A React ref pointing to the DOM element to track.
+ * @param {import('react').RefObject} ref - A React ref pointing to the DOM element to track.
  * @param {object} [options] - `IntersectionObserver` options.
- * @returns {State}
+ * @returns {State} - Object containing an `isVisible` flag and the `entry` returned from the `IntersectionObserver` instance.
  */
 const useElementOnScreen = (ref, options = {}) => {
   if (!ref || !ref.hasOwnProperty('current')) {
@@ -32,7 +32,7 @@ const useElementOnScreen = (ref, options = {}) => {
   /**
    * Tracks whether the element is visible or not.
    *
-   * @type {[State, function]}
+   * @type {[State, Function]}
    */
   const [state, setState] = useState({
     entry: null,

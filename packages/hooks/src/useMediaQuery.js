@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react'
  * Returns `true` if the given `mediaQuery` is active.
  *
  * @param {string} mediaQuery - The media query string to evaluate
- * @returns {boolean}
+ * @returns {boolean} - A boolean flag that determines if the given `mediaQuery` is active.
  */
 const useMediaQuery = (mediaQuery = '') => {
   const mediaQueryList = window.matchMedia(mediaQuery)

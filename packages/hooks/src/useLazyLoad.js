@@ -6,9 +6,9 @@ import useElementOnScreen from './useElementOnScreen'
  * Lazy loads the given element (tracked by `ref`) when it's
  * visible on the viewport.
  *
- * @param {object} ref - A React `ref` pointing to the element to lazy load.
+ * @param {import('react').RefObject} ref - A React `ref` pointing to the element to lazy load.
  * @param {object} [options] - `IntersectionObserver` options
- * @returns {boolean}
+ * @returns {boolean} - A boolean flag that determines if the element is loaded.
  */
 const useLazyLoad = (ref, options = { rootMargin: '50% 0px 0px 0px' }) => {
   if (!ref || !ref.hasOwnProperty('current')) {

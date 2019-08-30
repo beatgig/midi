@@ -1,17 +1,12 @@
 import { isFunction } from '@beatgig/is'
 
 /**
- * @typedef {function} DebouncedFunction
- * @property {function} cancel
- */
-
-/**
  * Returns a function that delays the execution of the given `callback`
  * according to the `delay`.
  *
- * @param {function} callback - The function to be delayed.
+ * @param {Function} callback - The function to be delayed.
  * @param {number} [delay=0] - The time in milliseconds to delay the given `callback`.
- * @returns {DebouncedFunction} - The debounced `callback` function.
+ * @returns {Function} - The debounced `callback` function.
  */
 const debounce = (callback, delay = 0) => {
   if (!isFunction(callback)) {
@@ -20,20 +15,21 @@ const debounce = (callback, delay = 0) => {
 
   let timerId
 
+  /**
+   * Delays the execution of the given `callback` function and returns a
+   * function that will cancel delayed invocations.
+   *
+   * @param {*} args - Arguments to be passed to the `callback` function.
+   * @returns {Function} - Function to cancel the execution of the given `callback`.
+   */
   const debounced = (...args) => {
     clearTimeout(timerId)
 
     timerId = setTimeout(() => {
       callback(...args)
     }, delay)
-  }
 
-  /**
-   * The delayed callback function will have a `cancel` method that to
-   * cancel delayed invocations.
-   */
-  debounced.cancel = () => {
-    clearTimeout(timerId)
+    return () => clearTimeout(timerId)
   }
 
   return debounced

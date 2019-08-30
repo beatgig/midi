@@ -67,29 +67,26 @@ const reducer = (state, action) => {
 }
 
 /**
- * @typedef {object} PlayerEmbedState
+ * @typedef {object} PlayerEmbed
  * @property {string} error
  * @property {object} metadata
  * @property {boolean} hasError
  * @property {boolean} isLoading
  * @property {boolean} hasLoaded
  * @property {boolean} hasMetadata
- */
-
-/**
- * @typedef { PlayerEmbedState & { renderEmbed: function }} PlayerEmbedData
+ * @property {Function} renderEmbed
  */
 
 /**
  * Returns metadata and a render method for loading and rendering
  * embeddable players.
  *
- * @param {object} options
- * @param {string} [options.apiUrl] - API url used to fetch metadata if `options.withMetadata` is `true`
- * @param {string} options.iframeUrl - The url used as the iframe's src attribute
- * @param {boolean} [options.withMetadata] - Flag to determine whether or not to fetch for more data
- * @param {function} [options.formatMetadata] - Function used to format the metadata
- * @returns {PlayerEmbedData}
+ * @param {object} options - Options used to load the iframe.
+ * @param {string} [options.apiUrl] - API url used to fetch metadata if `options.withMetadata` is `true`.
+ * @param {string} options.iframeUrl - The url used as the iframe's src attribute.
+ * @param {boolean} [options.withMetadata] - Flag to determine whether or not to fetch for more data.
+ * @param {Function} [options.formatMetadata] - Function used to format the metadata.
+ * @returns {PlayerEmbed} - The state of the embeddable player.
  */
 const usePlayerEmbed = ({
   apiUrl,
@@ -128,14 +125,7 @@ const usePlayerEmbed = ({
   }, [apiUrl, formatMetadata, withMetadata])
 
   return {
-    /**
-     * @type {PlayerEmbedState}
-     */
     ...state,
-    /**
-     * @params {object} iframeProps - Properties to pass on to the iframe element
-     * @returns {React.ReactElement}
-     */
     renderEmbed: (iframeProps) => (
       <iframe
         {...iframeProps}

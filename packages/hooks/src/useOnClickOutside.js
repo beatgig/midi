@@ -6,8 +6,8 @@ import { useEffect } from 'react'
  * Executes the given `callback` when clicking  outside of the element tracked
  * by the given `ref`, or any of the elements on `otherTargets`.
  *
- * @param {object} ref - A React `ref` pointing to the element.
- * @param {function} callback - Callback function executed when clicking outside.
+ * @param {import('react').RefObject} ref - A React `ref` pointing to the element.
+ * @param {Function} callback - Callback function executed when clicking outside.
  * @param {object[]} otherTargets - Array of other React `refs` pointing elements.
  */
 const useOnClickOutside = (ref, callback, otherTargets = []) => {

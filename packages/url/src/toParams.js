@@ -4,10 +4,10 @@ import { isObject } from '@beatgig/is'
 /**
  * Transforms the given plain `object` into a string of query parameters.
  *
- * @param {object} object={}
- * @returns {string}
+ * @param {object} object - The object to be transformed into query parameters.
+ * @returns {string} - A query parameter string based on the given `object`.
  */
-const toParams = (object = {}) =>
+const toParams = (object) =>
   compact(
     Object.entries(object).map(([key, value]) => {
       const valueIsArray = Array.isArray(value)

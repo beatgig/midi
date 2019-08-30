@@ -3,11 +3,11 @@ import { isNumeric } from '@beatgig/is'
 /**
  * Transforms a string of query parameters into a plain object.
  *
- * @param {string} params=''
- * @param {function} [format] - Optional function to format values
- * @returns {object}
+ * @param {string} params - Original query parameters to be transformed into an object.
+ * @param {Function} [format] - Optional function to format the values from the query parameters.
+ * @returns {object} - An object based on the given `params`.
  */
-const toParamsObject = (params = '', format = (value) => value) =>
+const toParamsObject = (params, format = (value) => value) =>
   params
     ? decodeURIComponent(params)
         .replace(/^\?/, '')

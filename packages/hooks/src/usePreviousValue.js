@@ -3,8 +3,8 @@ import { useRef, useEffect } from 'react'
 /**
  * Returns the previous value.
  *
- * @param {*} value
- * @returns {*}
+ * @param {*} value - The value you want to store in between renders.
+ * @returns {*} - The last value cached between renders.
  */
 const usePreviousValue = (value) => {
   const valueRef = useRef()
