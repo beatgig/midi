@@ -54,7 +54,7 @@
     "coverage": "yarn run build:clean && jest --coverage",
     "dev": "start-storybook -p 5555",
     "lerna:publish": "lerna publish --conventional-commits",
-    "prepublishOnly": "yarn run build:clean && yarn build:types",
+    "prepublishOnly": "yarn run build:clean",
     "test": "yarn run build:clean && jest"
   }
 }
