@@ -5,8 +5,8 @@ import useSoundCloudEmbed from '../src/useSoundCloudEmbed'
 
 describe('useSoundCloudEmbed', () => {
   test('returns a render function to render an iframe', () => {
-    const videoUrl = 'some/video/url'
-    const { result } = renderHook(() => useSoundCloudEmbed({ videoUrl }))
+    const url = 'some/video/url'
+    const { result } = renderHook(() => useSoundCloudEmbed({ url }))
     const { container } = render(result.current.renderEmbed())
     const iframe = container.querySelector('iframe')
 

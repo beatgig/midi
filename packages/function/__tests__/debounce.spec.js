@@ -25,11 +25,11 @@ describe('debounce', () => {
     const callback = jest.fn()
     const debounced = debounce(callback, 1000)
 
-    debounced()
+    const cancel = debounced()
     expect(callback).not.toBeCalled()
     jest.advanceTimersByTime(500)
     expect(callback).not.toBeCalled()
-    debounced.cancel()
+    cancel()
     jest.advanceTimersByTime(1000)
     expect(callback).not.toBeCalled()
     expect(callback).toHaveBeenCalledTimes(0)

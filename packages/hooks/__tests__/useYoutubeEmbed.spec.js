@@ -5,8 +5,8 @@ import useYoutubeEmbed from '../src/useYoutubeEmbed'
 
 describe('useYoutubeEmbed', () => {
   test('returns a render function to render an iframe', () => {
-    const videoUrl = 'some/video/url'
-    const { result } = renderHook(() => useYoutubeEmbed({ videoUrl }))
+    const url = 'some/video/url'
+    const { result } = renderHook(() => useYoutubeEmbed({ url }))
     const { container } = render(result.current.renderEmbed())
     const iframe = container.querySelector('iframe')
 
