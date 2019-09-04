@@ -1,5 +1,6 @@
 export { default as isDate } from './isDate'
 export { default as isElement } from './isElement'
+export { default as isEmail } from './isEmail'
 export { default as isEmptyObject } from './isEmptyObject'
 export { default as isFunction } from './isFunction'
 export { default as isNil } from './isNil'
