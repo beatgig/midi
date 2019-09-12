@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/string",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A collection of useful string utilities.",
   "author": "Elving Rodriguez",
   "homepage": "",
@@ -22,6 +22,6 @@
   "sideEffects": false,
   "dependencies": {
     "@beatgig/array": "^1.0.1",
-    "@beatgig/is": "^1.0.1"
+    "@beatgig/is": "^1.1.0"
   }
 }
