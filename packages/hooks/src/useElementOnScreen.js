@@ -31,8 +31,6 @@ const useElementOnScreen = (ref, options = {}) => {
 
   /**
    * Tracks whether the element is visible or not.
-   *
-   * @type {[State, Function]}
    */
   const [state, setState] = useState({
     entry: null,

@@ -39,7 +39,7 @@ const useYoutubeEmbed = ({
   withMetadata,
 }) => {
   /**
-   * @type {string} videoId
+   * @type {string}
    */
   const videoId = splitLastValue(url, '/')
 

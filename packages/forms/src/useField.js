@@ -13,15 +13,17 @@ import { isNil } from '@beatgig/is'
  */
 
 /**
- * @typedef {object} FieldMethods
+ * @typedef {object} HookReturn
+ * @property {boolean} [checked]
+ * @property {boolean} dirty
+ * @property {string} error
+ * @property {boolean} isValid
+ * @property {*} rawValue
  * @property {Function} setValue
  * @property {Function} setValueFromEvent
+ * @property {*} value
  * @property {Function} validate
  * @property {Function} validateFromEvent
- */
-
-/**
- * @typedef {FieldState & FieldMethods} Field
  */
 
 /**
@@ -60,7 +62,7 @@ const defaultFormatter = (value) => value
  * @param {Function} [options.onError=FieldEventCallback] - Callback function executed when the field validation fails.
  * @param {Function} [options.onChange=FieldEventCallback] - Callback function executed when the field's value changes.
  * @param {Function} [options.onSuccess=FieldEventCallback] - Callback function executed when the field validation is successful.
- * @returns {Field} - The field's state.
+ * @returns {HookReturn} - The field's state.
  */
 const useField = ({
   name,
@@ -82,7 +84,7 @@ const useField = ({
    * Validates the given `value`.
    *
    * @param {*} value
-   * @returns {FieldState}
+   * @returns {object}
    */
   const getFieldState = useCallback(
     (value) => {
