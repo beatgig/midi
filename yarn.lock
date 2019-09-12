@@ -3836,6 +3836,10 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
+code-prettify@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/code-prettify/-/code-prettify-0.1.0.tgz#46870cc8c1a50d09bad539b33a983dbd4aa34b1e"
+
 collect-all@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/collect-all/-/collect-all-1.0.3.tgz#1abcc20448b58a1447487fcf34130e9512b0acf8"
@@ -3859,6 +3863,10 @@ color-convert@^1.9.0:
 color-name@1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.3.tgz#a7d0558bd89c42f795dd42328f740831ca53bc25"
+
+color-themes-for-google-code-prettify@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/color-themes-for-google-code-prettify/-/color-themes-for-google-code-prettify-2.0.4.tgz#deeacf657fd68576864754d4e486d78dfdb1e784"
 
 colors@^1.1.2:
   version "1.3.3"
@@ -6799,6 +6807,26 @@ jsdoc-api@^5.0.3:
     temp-path "^1.0.0"
     walk-back "^3.0.1"
 
+jsdoc-import-typedef@^4.0.0-dev:
+  version "4.0.0-dev"
+  resolved "https://registry.yarnpkg.com/jsdoc-import-typedef/-/jsdoc-import-typedef-4.0.0-dev.tgz#ff292beb4d497aaf0e42f2829e9972654dcd2ee0"
+  dependencies:
+    "@babel/parser" "^7.5.5"
+    bluebird "^3.5.5"
+    catharsis "^0.8.11"
+    code-prettify "^0.1.0"
+    color-themes-for-google-code-prettify "^2.0.4"
+    escape-string-regexp "^2.0.0"
+    lodash "^4.17.15"
+    markdown-it "^9.0.1"
+    markdown-it-anchor "^5.2.4"
+    marked "^0.7.0"
+    mkdirp "^0.5.1"
+    open-sans-fonts "^1.5.1"
+    requizzle "^0.2.3"
+    strip-json-comments "^3.0.1"
+    taffydb "2.6.2"
+
 jsdoc-parse@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/jsdoc-parse/-/jsdoc-parse-4.0.1.tgz#07949b13b1659c2bbc5217560d77b46a060cb86d"
@@ -7332,13 +7360,23 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-markdown-it-anchor@^5.0.2:
+markdown-it-anchor@^5.0.2, markdown-it-anchor@^5.2.4:
   version "5.2.4"
   resolved "https://registry.yarnpkg.com/markdown-it-anchor/-/markdown-it-anchor-5.2.4.tgz#d39306fe4c199705b4479d3036842cf34dcba24f"
 
 markdown-it@^8.4.2:
   version "8.4.2"
   resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.4.2.tgz#386f98998dc15a37722aa7722084f4020bdd9b54"
+  dependencies:
+    argparse "^1.0.7"
+    entities "~1.1.1"
+    linkify-it "^2.0.0"
+    mdurl "^1.0.1"
+    uc.micro "^1.0.5"
+
+markdown-it@^9.0.1:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-9.1.0.tgz#df9601c168568704d554b1fff9af0c5b561168d9"
   dependencies:
     argparse "^1.0.7"
     entities "~1.1.1"
@@ -8057,6 +8095,10 @@ onetime@^2.0.0:
   resolved "https://registry.yarnpkg.com/onetime/-/onetime-2.0.1.tgz#067428230fd67443b2794b22bba528b6867962d4"
   dependencies:
     mimic-fn "^1.0.0"
+
+open-sans-fonts@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/open-sans-fonts/-/open-sans-fonts-1.5.1.tgz#435ec3d0941068e43e5eec3686bd64c8eccc7352"
 
 open@^6.1.0, open@^6.3.0:
   version "6.4.0"
