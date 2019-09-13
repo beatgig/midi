@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/beatgig/midi/compare/@beatgig/forms@1.1.0...@beatgig/forms@2.0.0) (2019-09-13)
+
+
+* feat!: return an `onSubmit` handler from `useForm` ([f5869a8](https://github.com/beatgig/midi/commit/f5869a8))
+
+
+### BREAKING CHANGES
+
+* `useForm` will now return an `onSubmit` handler instead of a `Form` component because the form component was getting re-rendered each time the hook was being called, which was causing the form to loose all the data it had.
+
+
+
+
+
 # 1.1.0 (2019-09-12)
 
 
