@@ -1,29 +1,10 @@
-import React, { useCallback, useState } from 'react'
+import { useCallback, useState } from 'react'
 
 /**
  * @typedef {object} HookReturn
- * @property {import('react').ComponentType} Form
+ * @property {import('react').FormEventHandler} [props.onSubmit]
  * @property {boolean} hasBeenSubmitted
  */
-
-/**
- * @typedef {object} FormProps
- * @property {import('react').ReactChildren} [props.children]
- * @property {string} [props.className='']
- * @property {import('react').FormEventHandler} [props.onSubmit]
- */
-
-/**
- * A form component that sets the `hasBeenSubmitted` flag to true, whenever
- * the `onSubmit` event is triggered on the form.
- *
- * @type {import('react').ComponentType<FormProps>}
- */
-const Form = ({ children = null, className = '', onSubmit = () => {} }) => (
-  <form className={className} onSubmit={onSubmit}>
-    {children}
-  </form>
-)
 
 /**
  * Returns a form component and it's state.
@@ -45,11 +26,7 @@ const useForm = ({ onSubmit = () => {} }) => {
   )
 
   return {
-    Form: ({ children = null, ...props }) => (
-      <Form {...props} onSubmit={onSubmitHandler}>
-        {children}
-      </Form>
-    ),
+    onSubmit: onSubmitHandler,
     hasBeenSubmitted,
   }
 }

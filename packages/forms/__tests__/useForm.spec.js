@@ -23,7 +23,7 @@ describe('useForm', () => {
     expect(state.current.flag).toBeFalsy()
 
     const { getByText } = render(
-      <form.current.Form>Form Content</form.current.Form>,
+      <form onSubmit={form.current.onSubmit}>Form Content</form>,
     )
 
     act(() => {
