@@ -9,9 +9,9 @@
  */
 const createValidation = (test, errorMessage) =>
   /**
-   * @param {*} value - The value to be validated.
+   * @param {*} args - The values to be validated.
    * @returns {string|null} - Returns an error message if the validation fails, otherwise it returns null.
    */
-  (value) => (!test(value) ? errorMessage : null)
+  (...args) => (!test(...args) ? errorMessage : null)
 
 export default createValidation

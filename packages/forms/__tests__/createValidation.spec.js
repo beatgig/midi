@@ -20,4 +20,14 @@ describe('createValidation', () => {
     expect(isLowerThanFive(4)).toBeNull()
     expect(isLowerThanFive(5)).toBeNull()
   })
+
+  test('it accepts multiple values', () => {
+    const isEqual = createValidation(
+      (a, b) => a === b,
+      'Expected the values to be equal',
+    )
+
+    expect(isEqual(1, 2)).toEqual('Expected the values to be equal')
+    expect(isEqual(1, 1)).toBeNull()
+  })
 })
