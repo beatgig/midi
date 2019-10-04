@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/beatgig/midi/compare/@beatgig/forms@2.0.0...@beatgig/forms@2.1.0) (2019-10-04)
+
+
+### Features
+
+* Supports multiple args in createValidation ([45a4198](https://github.com/beatgig/midi/commit/45a4198))
+
+
+
+
+
 # [2.0.0](https://github.com/beatgig/midi/compare/@beatgig/forms@1.1.0...@beatgig/forms@2.0.0) (2019-09-13)
 
 
