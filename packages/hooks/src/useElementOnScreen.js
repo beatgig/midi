@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 
 /**
  * @typedef {object} State
@@ -37,7 +37,7 @@ const useElementOnScreen = (ref, options = {}) => {
     isVisible: false,
   })
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     /**
      * Use `IntersectionObserver` to detect when the `element` is either
      * visible or close to being visible on the viewport depending on
@@ -62,7 +62,7 @@ const useElementOnScreen = (ref, options = {}) => {
     }
   }, [ref, root, rootMargin, threshold])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const element = ref.current
     const observer = observerRef.current
 
@@ -71,7 +71,7 @@ const useElementOnScreen = (ref, options = {}) => {
         observer.unobserve(element)
       }
     }
-  })
+  }, [ref])
 
   return state
 }
