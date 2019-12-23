@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/hooks",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "A collection of useful React hooks.",
   "author": "Elving Rodriguez",
   "homepage": "",
@@ -23,9 +23,9 @@
   "dependencies": {
     "@beatgig/array": "^1.1.0",
     "@beatgig/function": "^1.0.2",
-    "@beatgig/is": "^1.1.0",
-    "@beatgig/string": "^1.0.3",
-    "@beatgig/url": "^1.0.3"
+    "@beatgig/is": "^1.2.0",
+    "@beatgig/string": "^1.0.4",
+    "@beatgig/url": "^1.0.4"
   },
   "peerDependencies": {
     "react": "^16.8.6"

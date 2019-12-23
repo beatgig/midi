@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/url",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A collection of useful utilities for working with urls.",
   "author": "Elving Rodriguez",
   "homepage": "",
@@ -22,7 +22,7 @@
   "sideEffects": false,
   "dependencies": {
     "@beatgig/array": "^1.1.0",
-    "@beatgig/is": "^1.1.0",
+    "@beatgig/is": "^1.2.0",
     "lodash.isequal": "^4.5.0"
   }
 }

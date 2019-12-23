@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/forms",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A collection of useful utilities and React hooks to work with form validation.",
   "author": "Elving Rodriguez",
   "homepage": "",
@@ -21,7 +21,7 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@beatgig/is": "^1.1.0"
+    "@beatgig/is": "^1.2.0"
   },
   "peerDependencies": {
     "react": "^16.8.6"

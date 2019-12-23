@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/beatgig/midi/compare/@beatgig/is@1.1.0...@beatgig/is@1.2.0) (2019-12-23)
+
+
+### Features
+
+* add isBrowser method ([4ff4515](https://github.com/beatgig/midi/commit/4ff4515))
+
+
+
+
+
 # [1.1.0](https://github.com/beatgig/midi/compare/@beatgig/is@1.0.1...@beatgig/is@1.1.0) (2019-09-12)
 
 
