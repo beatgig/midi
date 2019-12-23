@@ -1,3 +1,4 @@
+export { default as isBrowser } from './isBrowser'
 export { default as isDate } from './isDate'
 export { default as isElement } from './isElement'
 export { default as isEmail } from './isEmail'
