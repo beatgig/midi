@@ -2,9 +2,9 @@
   "name": "@beatgig/hooks",
   "version": "1.1.6",
   "description": "A collection of useful React hooks.",
-  "author": "Elving Rodriguez",
-  "homepage": "",
-  "license": "ISC",
+  "author": "BeatGig LLC <engineering@beatgig.com>",
+  "homepage": "https://github.com/beatgig/midi/tree/master/packages/hooks",
+  "license": "MIT",
   "main": "dist/commonjs/index.js",
   "module": "dist/esm/index.js",
   "files": [

@@ -2,9 +2,9 @@
   "name": "@beatgig/function",
   "version": "1.0.2",
   "description": "A collection of useful function utilities.",
-  "author": "Elving Rodriguez",
-  "homepage": "",
-  "license": "ISC",
+  "author": "BeatGig LLC <engineering@beatgig.com>",
+  "homepage": "https://github.com/beatgig/midi/tree/master/packages/function",
+  "license": "MIT",
   "main": "dist/commonjs/index.js",
   "module": "dist/esm/index.js",
   "files": [

@@ -2,9 +2,9 @@
   "name": "@beatgig/forms",
   "version": "2.1.1",
   "description": "A collection of useful utilities and React hooks to work with form validation.",
-  "author": "Elving Rodriguez",
-  "homepage": "",
-  "license": "ISC",
+  "author": "BeatGig LLC <engineering@beatgig.com>",
+  "homepage": "https://github.com/beatgig/midi/tree/master/packages/forms",
+  "license": "MIT",
   "main": "dist/commonjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
