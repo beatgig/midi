@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "esnext",
+    "sourceMap": false,
+    "skipLibCheck": true,
+    "lib": ["es6", "DOM"]
+  },
+  "exclude": ["node_modules", "./packages/**/tests", "./packages/**/docs"]
+}
