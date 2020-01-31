@@ -1,5 +1,5 @@
-import nodemailer from "nodemailer";
-const mg = require("nodemailer-mailgun-transport");
+import nodemailer from 'nodemailer'
+import { transport as mg } from 'nodemailer-mailgun-transport'
 
 /**
  * @description
@@ -9,10 +9,10 @@ const mg = require("nodemailer-mailgun-transport");
 const auth = {
   auth: {
     api_key: process.env.MAILGUN_API_KEY,
-    domain: process.env.MAILGUN_DOMAIN
-  }
-};
+    domain: process.env.MAILGUN_DOMAIN,
+  },
+}
 
-const mailer = nodemailer.createTransport(mg(auth));
+const mailer = nodemailer.createTransport(mg(auth))
 
-export default mailer;
+export default mailer

@@ -1,7 +1,7 @@
-import { WebClient } from "@slack/web-api";
+import { WebClient } from '@slack/web-api'
+import { SlackNotificationTypes } from '../types/types'
 
-const slack = new WebClient(process.env.SLACK_TOKEN);
-import { SlackNotificationTypes } from "../types/types";
+const slack = new WebClient(process.env.SLACK_TOKEN)
 
 /**
  *
@@ -30,12 +30,12 @@ const sendSlack = async (options: SlackNotificationTypes) => {
       ...(options.blocks && { blocks: options.blocks }),
       ...(options.emoji && { icon_emoji: options.emoji }),
       ...(options.attachments && {
-        attachments: options.attachments
-      })
-    });
+        attachments: options.attachments,
+      }),
+    })
   } catch (error) {
-    throw new Error(`Slack notification failed to send: ${error}`);
+    throw new Error(`Slack notification failed to send: ${error}`)
   }
-};
+}
 
-export default sendSlack;
+export default sendSlack

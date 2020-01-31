@@ -1,5 +1,5 @@
-import mailer from "./mailer";
-import { EmailNotificationTypes } from "../../src/types/types";
+import mailer from './mailer'
+import { EmailNotificationTypes } from '../../src/types/types'
 
 /**
  *
@@ -29,17 +29,17 @@ import { EmailNotificationTypes } from "../../src/types/types";
 const sendEmail = async (options: EmailNotificationTypes) => {
   try {
     await mailer.sendMail({
-      from: "hello@example.com",
+      from: 'hello@example.com',
       to: options.to,
       subject: options.subject,
       template: options.template,
-      "h:X-Mailgun-Variables": JSON.stringify(options.templateData)
-    });
+      'h:X-Mailgun-Variables': JSON.stringify(options.templateData),
+    })
 
-    return "Email notification sent successfully.";
+    return 'Email notification sent successfully.'
   } catch (error) {
-    throw new Error(`Email notification failed to send: ${error}`);
+    throw new Error(`Email notification failed to send: ${error}`)
   }
-};
+}
 
-export default sendEmail;
+export default sendEmail

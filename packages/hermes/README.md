@@ -18,7 +18,7 @@ await sendNotification({
     email: {
       to: user.email,
       subject: 'Reset your password',
-      template: TEMPLATE_RESET_PASSWORD,
+      template: TEMPLATE_RESET_PASSWORD, // your template name in Mailgun
       templateData: {
         link,
       },
