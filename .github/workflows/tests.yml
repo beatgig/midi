@@ -21,18 +21,10 @@ jobs:
       - name: Install Dependencies
         run: yarn
 
-      - name: Setup Yarn Workspace
-        run: yarn bootstrap:ci
-
       - name: Build Packages
         run: yarn build
 
-      - name: Run Linters
-        run: yarn lint
-        env:
-          CI: true
-
       - name: Run Tests
-        run: yarn test:ci
+        run: yarn test
         env:
           CI: true
