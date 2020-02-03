@@ -5,4 +5,6 @@
  * @description
  * Checks whether the given value has is at least 8 characters long
  */
-export const isPasswordLength = (value) => value && value.length >= 8
+const isPasswordLength = (value) => value && value.length >= 8
+
+export default isPasswordLength
