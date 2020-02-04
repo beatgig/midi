@@ -6,7 +6,11 @@
   "license": "MIT",
   "repository": "https://beatgig.com/midi/hermes",
   "keywords": [
-    "notifications"
+    "notifications",
+    "slack",
+    "email",
+    "sms",
+    "alerts"
   ],
   "main": "dist/index.js",
   "module": "dist/index.js",
