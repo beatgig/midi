@@ -1,3 +1,5 @@
+![Tests](https://github.com/beatgig/midi/workflows/Tests/badge.svg)
+
 # MIDI
 
 MIDI is a collection of Javascript packages that we build and use to power [BeatGig](https://beatgig.com/).
