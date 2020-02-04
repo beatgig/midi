@@ -59,7 +59,7 @@
     "build": "concurrently --names 'commonjs,esm' 'yarn run build:commonjs' 'yarn run build:esm'",
     "coverage": "yarn run build:clean && jest --coverage",
     "dev": "start-storybook -p 5555",
-    "lerna:publish": "lerna publish --conventional-commits",
+    "lerna:publish": "lerna publish --conventional-commits -m 'chore(release): publish'",
     "prepublishOnly": "yarn run build:clean",
     "test": "yarn run build:clean && jest"
   }

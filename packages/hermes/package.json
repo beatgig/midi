@@ -5,6 +5,9 @@
   "description": "A package to send messages via email, slack, sms, and more.",
   "license": "MIT",
   "repository": "https://beatgig.com/midi/hermes",
+  "keywords": [
+    "notifications"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.js",
   "scripts": {
