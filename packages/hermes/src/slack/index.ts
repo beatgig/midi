@@ -1,1 +1,1 @@
-export { default as sendSlack } from "./sendSlack";
+export { init as slackAPI } from './sendSlack'

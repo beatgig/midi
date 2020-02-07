@@ -1,18 +1,14 @@
-import { sendEmail } from "./email";
-import { sendSlack } from "./slack";
-import { sendSms } from "./sms";
+import { sendEmail } from './email'
+import { slackAPI } from './slack/'
+import { sendSms } from './sms'
 
 import {
   SendNotificationTypes,
   SlackNotificationTypes,
   EmailNotificationTypes,
-  SMSNotificationTypes
-} from "./types/types";
-import {
-  CHANNEL_SLACK,
-  CHANNEL_EMAIL,
-  CHANNEL_SMS
-} from "./constants/channels";
+  SMSNotificationTypes,
+} from './types/types'
+import { CHANNEL_SLACK, CHANNEL_EMAIL, CHANNEL_SMS } from './constants/channels'
 
 /**
  * @description
@@ -47,29 +43,30 @@ import {
 const sendNotification = async (options: SendNotificationTypes) => {
   const handleChannel = {
     slack: async (options: SlackNotificationTypes) => {
-      await sendSlack(options);
+      let slack = new slackAPI(process.env.SLACK_TOKEN)
+      await slack.sendSlack(options)
     },
     email: async (options: EmailNotificationTypes) => {
-      await sendEmail(options);
+      await sendEmail(options)
     },
     sms: async (options: SMSNotificationTypes) => {
-      await sendSms(options);
-    }
-  };
+      await sendSms(options)
+    },
+  }
 
-  options.channels.forEach(channel => {
+  options.channels.forEach((channel) => {
     switch (channel) {
       case CHANNEL_SLACK:
-        handleChannel.slack(options.slack);
-        break;
+        handleChannel.slack(options.slack)
+        break
       case CHANNEL_EMAIL:
-        handleChannel.email(options.email);
-        break;
+        handleChannel.email(options.email)
+        break
       case CHANNEL_SMS:
-        handleChannel.sms(options.sms);
-        break;
+        handleChannel.sms(options.sms)
+        break
     }
-  });
-};
+  })
+}
 
-export default sendNotification;
+export default sendNotification

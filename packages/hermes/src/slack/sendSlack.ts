@@ -1,8 +1,6 @@
 import { WebClient } from '@slack/web-api'
 import { SlackNotificationTypes } from '../types/types'
 
-const slack = new WebClient(process.env.SLACK_TOKEN)
-
 /**
  *
  * @description
@@ -22,9 +20,19 @@ const slack = new WebClient(process.env.SLACK_TOKEN)
  *   })
  * ```
  */
+
+let apiClient: WebClient
+
+const init: any = (slackToken: string) => {
+  if (!apiClient) {
+    apiClient = new WebClient(slackToken)
+  }
+  return apiClient
+}
+
 const sendSlack = async (options: SlackNotificationTypes) => {
   try {
-    await slack.chat.postMessage({
+    await apiClient.chat.postMessage({
       channel: options.channel,
       ...(options.message && { text: options.message }),
       ...(options.blocks && { blocks: options.blocks }),
@@ -38,4 +46,4 @@ const sendSlack = async (options: SlackNotificationTypes) => {
   }
 }
 
-export default sendSlack
+export { sendSlack, init }
