@@ -1,5 +1,5 @@
-import nodemailer from 'nodemailer'
-import { transport as mg } from 'nodemailer-mailgun-transport'
+const nodemailer = require('nodemailer')
+const mg = require('nodemailer-mailgun-transport')
 
 /**
  * @description

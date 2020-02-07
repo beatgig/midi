@@ -1,12 +1,19 @@
 {
   "name": "@beatgig/hermes",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "author": "BeatGig LLC",
   "description": "A package to send messages via email, slack, sms, and more.",
   "license": "MIT",
-  "repository": "https://beatgig.com/midi/hermes",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "repository": "https://github.com/beatgig/midi/tree/master/packages/hermes",
+  "keywords": [
+    "notifications",
+    "slack",
+    "email",
+    "sms",
+    "alerts"
+  ],
+  "main": "dist/commonjs/index.js",
+  "module": "dist/esm/index.js",
   "scripts": {
     "test": "yarn jest"
   },
