@@ -1,5 +1,5 @@
 import { sendEmail } from './email'
-import { slackAPI } from './slack/'
+import { slackNotifier } from './slack/'
 import { sendSms } from './sms'
 
 import {
@@ -17,6 +17,8 @@ import { CHANNEL_SLACK, CHANNEL_EMAIL, CHANNEL_SMS } from './constants/channels'
  *
  * @example
  * ```
+ * let token = process.env.SLACK_TOKEN
+ *
  * await sendNotification({
  *     channels: ['email', 'slack', 'sms'],
  *     email: {
@@ -28,6 +30,7 @@ import { CHANNEL_SLACK, CHANNEL_EMAIL, CHANNEL_SMS } from './constants/channels'
  *       },
  *     },
  *    slack: {
+ *       token
  *       channel: 'testing',
  *       message: 'User #1234 has requested a password reset.'
  *       emoji: ':fire:',
@@ -43,7 +46,7 @@ import { CHANNEL_SLACK, CHANNEL_EMAIL, CHANNEL_SMS } from './constants/channels'
 const sendNotification = async (options: SendNotificationTypes) => {
   const handleChannel = {
     slack: async (options: SlackNotificationTypes) => {
-      let slack = new slackAPI(process.env.SLACK_TOKEN)
+      const slack = new slackNotifier(options)
       await slack.sendSlack(options)
     },
     email: async (options: EmailNotificationTypes) => {

@@ -10,9 +10,12 @@ import { SlackNotificationTypes } from '../types/types'
  * @example
  *
  * ```
+ * let token = process.env.SLACK_TOKEN
+ *
  * await sendNotification({
  *     channels: ['slack'],
  *     slack: {
+ *       token,
  *       channel: 'testing',
  *       emoji: ':fire:',
  *       message: 'testing',
@@ -21,29 +24,35 @@ import { SlackNotificationTypes } from '../types/types'
  * ```
  */
 
-let apiClient: WebClient
+let slack = undefined
+class slackNotifier {
+  options: object
+  token: string
 
-const init: any = (slackToken: string) => {
-  if (!apiClient) {
-    apiClient = new WebClient(slackToken)
+  constructor(options: SlackNotificationTypes) {
+    this.options = options
+    this.token = options.token
+
+    if (!slack) {
+      slack = new WebClient(this.token)
+    }
   }
-  return apiClient
+
+  sendSlack = async (options) => {
+    try {
+      await slack.chat.postMessage({
+        channel: options.channel,
+        ...(options.message && { text: options.message }),
+        ...(options.blocks && { blocks: options.blocks }),
+        ...(options.emoji && { icon_emoji: options.emoji }),
+        ...(options.attachments && {
+          attachments: options.attachments,
+        }),
+      })
+    } catch (error) {
+      throw new Error(`Slack notification failed to send: ${error}`)
+    }
+  }
 }
 
-const sendSlack = async (options: SlackNotificationTypes) => {
-  try {
-    await apiClient.chat.postMessage({
-      channel: options.channel,
-      ...(options.message && { text: options.message }),
-      ...(options.blocks && { blocks: options.blocks }),
-      ...(options.emoji && { icon_emoji: options.emoji }),
-      ...(options.attachments && {
-        attachments: options.attachments,
-      }),
-    })
-  } catch (error) {
-    throw new Error(`Slack notification failed to send: ${error}`)
-  }
-}
-
-export { sendSlack, init }
+export default slackNotifier

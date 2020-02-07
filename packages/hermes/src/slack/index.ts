@@ -1,1 +1,1 @@
-export { init as slackAPI } from './sendSlack'
+export { default as slackNotifier } from './sendSlack'

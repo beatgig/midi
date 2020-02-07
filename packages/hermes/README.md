@@ -13,6 +13,8 @@ Easily send notifications to Slack, Email, or SMS.
 ## Example
 
 ```javascript
+let token = process.env.SLACK_TOKEN
+
 await sendNotification({
     channels: ['email', 'slack', 'sms'],
     email: {
@@ -24,6 +26,7 @@ await sendNotification({
       },
     },
    slack: {
+      token,
       channel: 'testing',
       message: 'User #1234 has requested a password reset.'
       emoji: ':fire:',
