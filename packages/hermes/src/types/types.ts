@@ -26,4 +26,7 @@ export type EmailNotificationTypes = {
 export type SMSNotificationTypes = {
   to: string
   message: string
+  from: string
+  accountSid: string
+  token: string
 }

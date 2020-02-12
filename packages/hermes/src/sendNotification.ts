@@ -1,6 +1,6 @@
 import { sendEmail } from './email'
 import { slackNotifier } from './slack/'
-import { sendSms } from './sms'
+import { smsNotifier } from './sms'
 
 import {
   SendNotificationTypes,
@@ -53,7 +53,9 @@ const sendNotification = async (options: SendNotificationTypes) => {
       await sendEmail(options)
     },
     sms: async (options: SMSNotificationTypes) => {
-      await sendSms(options)
+      const sms = new smsNotifier(options)
+
+      await sms.sendSms(options)
     },
   }
 

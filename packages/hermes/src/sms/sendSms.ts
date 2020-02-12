@@ -1,9 +1,5 @@
-import { Twilio } from "twilio";
-
-type SMSTypes = {
-  to: string;
-  message: string;
-};
+import { Twilio } from 'twilio'
+import { SMSNotificationTypes } from '../types/types'
 
 /**
  *
@@ -20,25 +16,39 @@ type SMSTypes = {
  *       to: '1234567890',
  *       from: process.env.TWILIO_FROM_NUMBER,
  *       message: 'testing',
+ *       accountSid: process.env.TWILIO_ACCOUNT_SID,
+ *       token: process.env.TWILIO_TOKEN
  *     },
  *   })
  * ```
  */
-const sendSms = async (options: SMSTypes) => {
-  const accountSid = process.env.TWLIO_ACCOUNT_SID;
-  const token = process.env.TWILIO_TOKEN;
 
-  const twilio = new Twilio(accountSid, token);
+let twilio = undefined
+class SmsNotifier {
+  options: object
+  accountSid: string
+  token: string
 
-  try {
-    await twilio.messages.create({
-      to: options.to,
-      from: process.env.TWILIO_FROM_NUMBER,
-      body: options.message
-    });
-  } catch (error) {
-    throw new Error(`Failed to send SMS notification: ${error}`);
+  constructor(options: SMSNotificationTypes) {
+    this.accountSid = options.accountSid
+    this.token = options.token
+
+    if (!twilio) {
+      twilio = new Twilio(this.accountSid, this.token)
+    }
   }
-};
 
-export default sendSms;
+  sendSms = async (options: SMSNotificationTypes) => {
+    try {
+      await twilio.messages.create({
+        to: options.to,
+        from: options.from,
+        body: options.message,
+      })
+    } catch (error) {
+      throw new Error(`Failed to send SMS notification: ${error}`)
+    }
+  }
+}
+
+export default SmsNotifier
