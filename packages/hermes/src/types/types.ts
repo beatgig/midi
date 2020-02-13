@@ -21,6 +21,8 @@ export type EmailNotificationTypes = {
   subject: string
   template: string
   templateData?: Object
+  apiKey: string
+  domain: string
 }
 
 export type SMSNotificationTypes = {

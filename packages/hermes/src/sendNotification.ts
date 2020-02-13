@@ -1,4 +1,4 @@
-import { sendEmail } from './email'
+import { emailNotifier } from './email'
 import { slackNotifier } from './slack/'
 import { smsNotifier } from './sms'
 
@@ -8,6 +8,7 @@ import {
   EmailNotificationTypes,
   SMSNotificationTypes,
 } from './types/types'
+
 import { CHANNEL_SLACK, CHANNEL_EMAIL, CHANNEL_SMS } from './constants/channels'
 
 /**
@@ -17,7 +18,7 @@ import { CHANNEL_SLACK, CHANNEL_EMAIL, CHANNEL_SMS } from './constants/channels'
  *
  * @example
  * ```
- * let token = process.env.SLACK_TOKEN
+ * import { sendNotification } from '@beatgig/hermes'
  *
  * await sendNotification({
  *     channels: ['email', 'slack', 'sms'],
@@ -28,9 +29,11 @@ import { CHANNEL_SLACK, CHANNEL_EMAIL, CHANNEL_SMS } from './constants/channels'
  *       templateData: {
  *         link,
  *       },
+ *      apiKey: process.env.MAILGUN_API_KEY,
+ *      domain: process.env.MAILGUN_DOMAIN
  *     },
  *    slack: {
- *       token
+ *       token: process.env.SLACK_TOKEN
  *       channel: 'testing',
  *       message: 'User #1234 has requested a password reset.'
  *       emoji: ':fire:',
@@ -38,7 +41,9 @@ import { CHANNEL_SLACK, CHANNEL_EMAIL, CHANNEL_SMS } from './constants/channels'
  *     },
  *    sms: {
  *      to: user.phone,
- *      message: 'A password reset request was received for your account. If this was not you, please contact us immediately.'
+ *      message: 'A password reset request was received for your account. If this was not you, please contact us immediately.',
+ *      accountSid: process.env.TWILIO_ACCOUNT_SID,
+ *      token: process.env.TWILIO_TOKEN
  *    }
  *   })
  * ```
@@ -47,11 +52,16 @@ const sendNotification = async (options: SendNotificationTypes) => {
   const handleChannel = {
     slack: async (options: SlackNotificationTypes) => {
       const slack = new slackNotifier(options)
+
       await slack.sendSlack(options)
     },
+
     email: async (options: EmailNotificationTypes) => {
-      await sendEmail(options)
+      const email = new emailNotifier(options)
+
+      await email.sendEmail(options)
     },
+
     sms: async (options: SMSNotificationTypes) => {
       const sms = new smsNotifier(options)
 
