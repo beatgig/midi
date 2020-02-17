@@ -1,1 +1,1 @@
-export { default as sendEmail } from "./sendEmail";
+export { default as emailNotifier } from './sendEmail'

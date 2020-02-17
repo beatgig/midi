@@ -1,4 +1,5 @@
-import mailer from './mailer'
+import * as nodemailer from 'nodemailer'
+import * as mg from 'nodemailer-mailgun-transport'
 import { EmailNotificationTypes } from '../../src/types/types'
 
 /**
@@ -16,30 +17,62 @@ import { EmailNotificationTypes } from '../../src/types/types'
  * await sendNotification(message, {
  *     channels: ['email'],
  *     email: {
+ *       token
  *       to: user.email,
  *       subject: 'Reset your password',
  *       template: TEMPLATE_RESET_PASSWORD,
  *       templateData: {
  *         link,
  *       },
+ *      apiKey: process.env.MAILGUN_API_KEY,
+ *      domain: process.env.MAILGUN_DOMAIN
  *     },
  *   })
  * ```
  */
-const sendEmail = async (options: EmailNotificationTypes) => {
-  try {
-    await mailer.sendMail({
-      from: 'hello@example.com',
-      to: options.to,
-      subject: options.subject,
-      template: options.template,
-      'h:X-Mailgun-Variables': JSON.stringify(options.templateData),
-    })
 
-    return 'Email notification sent successfully.'
-  } catch (error) {
-    throw new Error(`Email notification failed to send: ${error}`)
+let mailer
+class EmailNotifier {
+  auth: object
+  apiKey: string
+  domain: string
+
+  constructor(options: EmailNotificationTypes) {
+    this.apiKey = options.apiKey
+    this.domain = options.domain
+
+    this.auth = {
+      apiKey: this.apiKey,
+      domain: this.domain,
+    }
+
+    if (!mailer) {
+      mailer = nodemailer.createTransport(mg(this.auth))
+    }
+  }
+
+  sendEmail = async (options: EmailNotificationTypes) => {
+    const auth = {
+      auth: {
+        api_key: this.apiKey,
+        domain: this.domain,
+      },
+    }
+
+    try {
+      await mailer.sendMail({
+        from: 'hello@example.com',
+        to: options.to,
+        subject: options.subject,
+        template: options.template,
+        'h:X-Mailgun-Variables': JSON.stringify(options.templateData),
+      })
+
+      return 'Email notification sent successfully.'
+    } catch (error) {
+      throw new Error(`Email notification failed to send: ${error}`)
+    }
   }
 }
 
-export default sendEmail
+export default EmailNotifier

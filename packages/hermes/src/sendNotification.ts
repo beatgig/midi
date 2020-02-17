@@ -1,18 +1,15 @@
-import { sendEmail } from "./email";
-import { sendSlack } from "./slack";
-import { sendSms } from "./sms";
+import { emailNotifier } from './email'
+import { slackNotifier } from './slack/'
+import { smsNotifier } from './sms'
 
 import {
   SendNotificationTypes,
   SlackNotificationTypes,
   EmailNotificationTypes,
-  SMSNotificationTypes
-} from "./types/types";
-import {
-  CHANNEL_SLACK,
-  CHANNEL_EMAIL,
-  CHANNEL_SMS
-} from "./constants/channels";
+  SMSNotificationTypes,
+} from './types/types'
+
+import { CHANNEL_SLACK, CHANNEL_EMAIL, CHANNEL_SMS } from './constants/channels'
 
 /**
  * @description
@@ -21,6 +18,8 @@ import {
  *
  * @example
  * ```
+ * import { sendNotification } from '@beatgig/hermes'
+ *
  * await sendNotification({
  *     channels: ['email', 'slack', 'sms'],
  *     email: {
@@ -30,8 +29,11 @@ import {
  *       templateData: {
  *         link,
  *       },
+ *      apiKey: process.env.MAILGUN_API_KEY,
+ *      domain: process.env.MAILGUN_DOMAIN
  *     },
  *    slack: {
+ *       token: process.env.SLACK_TOKEN
  *       channel: 'testing',
  *       message: 'User #1234 has requested a password reset.'
  *       emoji: ':fire:',
@@ -39,7 +41,9 @@ import {
  *     },
  *    sms: {
  *      to: user.phone,
- *      message: 'A password reset request was received for your account. If this was not you, please contact us immediately.'
+ *      message: 'A password reset request was received for your account. If this was not you, please contact us immediately.',
+ *      accountSid: process.env.TWILIO_ACCOUNT_SID,
+ *      token: process.env.TWILIO_TOKEN
  *    }
  *   })
  * ```
@@ -47,29 +51,37 @@ import {
 const sendNotification = async (options: SendNotificationTypes) => {
   const handleChannel = {
     slack: async (options: SlackNotificationTypes) => {
-      await sendSlack(options);
-    },
-    email: async (options: EmailNotificationTypes) => {
-      await sendEmail(options);
-    },
-    sms: async (options: SMSNotificationTypes) => {
-      await sendSms(options);
-    }
-  };
+      const slack = new slackNotifier(options)
 
-  options.channels.forEach(channel => {
+      await slack.sendSlack(options)
+    },
+
+    email: async (options: EmailNotificationTypes) => {
+      const email = new emailNotifier(options)
+
+      await email.sendEmail(options)
+    },
+
+    sms: async (options: SMSNotificationTypes) => {
+      const sms = new smsNotifier(options)
+
+      await sms.sendSms(options)
+    },
+  }
+
+  options.channels.forEach((channel) => {
     switch (channel) {
       case CHANNEL_SLACK:
-        handleChannel.slack(options.slack);
-        break;
+        handleChannel.slack(options.slack)
+        break
       case CHANNEL_EMAIL:
-        handleChannel.email(options.email);
-        break;
+        handleChannel.email(options.email)
+        break
       case CHANNEL_SMS:
-        handleChannel.sms(options.sms);
-        break;
+        handleChannel.sms(options.sms)
+        break
     }
-  });
-};
+  })
+}
 
-export default sendNotification;
+export default sendNotification

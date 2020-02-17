@@ -1,1 +1,1 @@
-export { default as sendSlack } from "./sendSlack";
+export { default as slackNotifier } from './sendSlack'
