@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/hermes",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "BeatGig LLC",
   "description": "A package to send messages via email, slack, sms, and more.",
   "license": "MIT",
