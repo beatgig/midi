@@ -1,42 +1,42 @@
-const sendNotification = jest.fn();
+const sendNotification = jest.fn()
 
-describe("Notification tests", () => {
-  test("confirms that an email notification has been sent", async () => {
+describe('Notification tests', () => {
+  test('confirms that an email notification has been sent', async () => {
     await sendNotification({
-      channels: ["email"],
+      channels: ['email'],
       email: {
-        to: "some.user@example.com",
-        subject: "Test Message",
-        template: "sampleTemplate",
+        to: 'some.user@example.com',
+        subject: 'Test Message',
+        template: 'sampleTemplate',
         templateData: {
-          firstName: "Test"
-        }
-      }
-    });
+          firstName: 'Test',
+        },
+      },
+    })
 
-    expect(sendNotification).toHaveBeenCalled();
-  });
+    expect(sendNotification).toHaveBeenCalled()
+  })
 
-  test("confirms that a slack notification has been sent", async () => {
+  test('confirms that a slack notification has been sent', async () => {
     await sendNotification({
-      channels: ["slack"],
+      channels: ['slack'],
       slack: {
-        channel: "testing",
-        emoji: ":fire:",
-        message: "testing"
-      }
-    });
+        channel: 'testing',
+        emoji: ':fire:',
+        message: 'testing',
+      },
+    })
 
-    expect(sendNotification).toHaveBeenCalled();
-  });
+    expect(sendNotification).toHaveBeenCalled()
+  })
 
-  test("confirms that an sms notification has been sent", async () => {
+  test('confirms that an sms notification has been sent', async () => {
     await sendNotification({
-      channels: ["sms"],
+      channels: ['sms'],
       sms: {
-        to: "1234567890",
-        message: "testing"
-      }
-    });
-  });
-});
+        to: '1234567890',
+        message: 'testing',
+      },
+    })
+  })
+})

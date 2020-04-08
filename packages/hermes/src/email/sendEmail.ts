@@ -33,7 +33,7 @@ import { EmailNotificationTypes } from '../../src/types/types'
 
 let mailer
 class EmailNotifier {
-  auth: object
+  options: object
   apiKey: string
   domain: string
 
@@ -41,13 +41,14 @@ class EmailNotifier {
     this.apiKey = options.apiKey
     this.domain = options.domain
 
-    this.auth = {
-      apiKey: this.apiKey,
-      domain: this.domain,
+    this.options = {
+      auth: {
+        apiKey: this.apiKey,
+        domain: this.domain,
+      },
     }
-
     if (!mailer) {
-      mailer = nodemailer.createTransport(mg(this.auth))
+      mailer = nodemailer.createTransport(mg(this.options))
     }
   }
 
