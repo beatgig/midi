@@ -43,7 +43,7 @@ class EmailNotifier {
 
     this.options = {
       auth: {
-        apiKey: this.apiKey,
+        api_key: this.apiKey,
         domain: this.domain,
       },
     }
@@ -55,7 +55,7 @@ class EmailNotifier {
   sendEmail = async (options: EmailNotificationTypes) => {
     const auth = {
       auth: {
-        api_key: this.apiKey,
+        apiKey: this.apiKey,
         domain: this.domain,
       },
     }
