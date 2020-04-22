@@ -1,0 +1,44 @@
+{
+  "name": "@beatgig/hermes",
+  "version": "1.1.1",
+  "author": "BeatGig LLC",
+  "description": "A package to send messages via email, slack, sms, and more.",
+  "license": "MIT",
+  "repository": "https://github.com/beatgig/midi/tree/master/packages/hermes",
+  "keywords": [
+    "notifications",
+    "slack",
+    "email",
+    "sms",
+    "alerts",
+    "mailgun"
+  ],
+  "main": "dist/commonjs/index.js",
+  "module": "dist/esm/index.js",
+  "scripts": {
+    "test": "yarn jest"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/tests/utils/setEnvVars.ts"
+    ]
+  },
+  "directories": {
+    "lib": "dist",
+    "test": "tests"
+  },
+  "dependencies": {
+    "@slack/web-api": "^5.7.0",
+    "nodemailer": "^6.4.2",
+    "nodemailer-mailgun-transport": "^2.0.0",
+    "twilio": "^3.39.3"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/jest": "^25.1.1",
+    "@types/node": "^13.5.0",
+    "jest": "^25.1.0",
+    "typescript": "^3.7.5"
+  }
+}

@@ -6,7 +6,11 @@ module.exports = {
     '@babel/plugin-proposal-optional-chaining',
     'babel-plugin-add-react-displayname',
   ],
-  presets: ['@babel/preset-env', '@babel/preset-react'],
+  presets: [
+    '@babel/preset-env',
+    '@babel/preset-react',
+    '@babel/preset-typescript',
+  ],
   env: {
     esm: {
       presets: [['@babel/preset-env', { modules: false }]],

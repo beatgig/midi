@@ -1,3 +1,5 @@
+![Tests](https://github.com/beatgig/midi/workflows/Tests/badge.svg)
+
 # MIDI
 
 MIDI is a collection of Javascript packages that we build and use to power [BeatGig](https://beatgig.com/).
@@ -15,3 +17,4 @@ This repository is managed as a monorepo composed of multiple NPM packages and e
 | [@beatgig/string](packages/string)     | A collection of useful string utilities.                                       | ![npm](https://img.shields.io/npm/v/@beatgig/string.svg?style=flat-square)   |
 | [@beatgig/url](packages/url)           | A collection of useful utilities for working with urls.                        | ![npm](https://img.shields.io/npm/v/@beatgig/url.svg?style=flat-square)      |
 | [@beatgig/forms](packages/forms)       | A collection of useful utilities and React hooks to work with form validation. | ![npm](https://img.shields.io/npm/v/@beatgig/forms.svg?style=flat-square)    |
+| [@beatgig/hermes](packages/hermes)     | Easily send notifications to Slack, Email, or SMS.                             | ![npm](https://img.shields.io/npm/v/@beatgig/hermes.svg?style=flat-square)   |

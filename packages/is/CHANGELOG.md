@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/beatgig/midi/compare/@beatgig/is@1.2.0...@beatgig/is@1.3.0) (2020-02-04)
+
+
+### Features
+
+* Add test for isPasswordLength ([896b8da](https://github.com/beatgig/midi/commit/896b8da))
+* Added password length check ([22d1429](https://github.com/beatgig/midi/commit/22d1429))
+
+
+
+
+
 # [1.2.0](https://github.com/beatgig/midi/compare/@beatgig/is@1.1.0...@beatgig/is@1.2.0) (2019-12-23)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/is",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "A collection of useful type and value checking functions.",
   "author": "BeatGig LLC <engineering@beatgig.com>",
   "homepage": "https://github.com/beatgig/midi/tree/master/packages/is",
