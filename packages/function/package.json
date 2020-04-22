@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/function",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A collection of useful function utilities.",
   "author": "BeatGig LLC <engineering@beatgig.com>",
   "homepage": "https://github.com/beatgig/midi/tree/master/packages/function",

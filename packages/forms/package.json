@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/forms",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "A collection of useful utilities and React hooks to work with form validation.",
   "author": "BeatGig LLC <engineering@beatgig.com>",
   "homepage": "https://github.com/beatgig/midi/tree/master/packages/forms",
@@ -21,7 +21,7 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@beatgig/is": "^1.3.0"
+    "@beatgig/is": "^1.3.1"
   },
   "peerDependencies": {
     "react": "^16.8.6"

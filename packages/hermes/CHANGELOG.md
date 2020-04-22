@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/beatgig/midi/tree/master/packages/hermes/compare/@beatgig/hermes@1.1.1...@beatgig/hermes@1.1.2) (2020-04-22)
+
+**Note:** Version bump only for package @beatgig/hermes
+
+
+
+
+
 ## [1.1.1](https://github.com/beatgig/midi/tree/master/packages/hermes/compare/@beatgig/hermes@1.1.0...@beatgig/hermes@1.1.1) (2020-04-09)
 
 **Note:** Version bump only for package @beatgig/hermes

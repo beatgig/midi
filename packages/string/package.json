@@ -1,6 +1,6 @@
 {
   "name": "@beatgig/string",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A collection of useful string utilities.",
   "author": "BeatGig LLC <engineering@beatgig.com>",
   "homepage": "https://github.com/beatgig/midi/tree/master/packages/string",
@@ -21,7 +21,7 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@beatgig/array": "^1.1.1",
-    "@beatgig/is": "^1.3.0"
+    "@beatgig/array": "^1.1.2",
+    "@beatgig/is": "^1.3.1"
   }
 }
