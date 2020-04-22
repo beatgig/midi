@@ -1,3 +1,5 @@
+import { isNil } from '@beatgig/is'
+
 import hasFields from './hasFields'
 
 /**
@@ -9,10 +11,13 @@ import hasFields from './hasFields'
 const getRawValues = (fields) =>
   hasFields(fields)
     ? fields.reduce(
-        (result, field) => ({
-          ...result,
-          [field.name]: field.rawValue,
-        }),
+        (result, field) =>
+          isNil(field)
+            ? result
+            : {
+                ...result,
+                [field.name]: field.rawValue,
+              },
         {},
       )
     : {}

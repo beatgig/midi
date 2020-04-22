@@ -11,4 +11,8 @@ describe('areValid', () => {
   test('returns false if one of the fields is not valid', () => {
     expect(areValid([nameField, emailField, {}])).toBeFalsy()
   })
+
+  test('returns false if one of the fields is null or undefined', () => {
+    expect(areValid([nameField, null, emailField, {}, undefined])).toBeFalsy()
+  })
 })

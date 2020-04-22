@@ -21,4 +21,11 @@ describe('getRawValues', () => {
       phone: '7875555555',
     })
   })
+
+  test('doesnt throw error if one or more fields are null or undefined', () => {
+    expect(getRawValues([nameField, null, phoneField, undefined])).toEqual({
+      name: 'name',
+      phone: '7875555555',
+    })
+  })
 })

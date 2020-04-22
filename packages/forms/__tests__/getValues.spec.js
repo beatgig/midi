@@ -21,4 +21,11 @@ describe('getValues', () => {
       phone: '(787) 555-5555',
     })
   })
+
+  test('doesnt throw error if one or more fields are null or undefined', () => {
+    expect(getValues([nameField, null, phoneField, undefined])).toEqual({
+      name: 'Name',
+      phone: '(787) 555-5555',
+    })
+  })
 })

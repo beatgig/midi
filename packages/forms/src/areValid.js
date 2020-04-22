@@ -1,3 +1,5 @@
+import { isNil } from '@beatgig/is'
+
 import hasFields from './hasFields'
 
 /**
@@ -7,6 +9,6 @@ import hasFields from './hasFields'
  * @returns {boolean} - A boolean flag that determines whether all the fields in the array are valid.
  */
 const areValid = (fields) =>
-  hasFields(fields) && fields.every((field) => field.isValid)
+  hasFields(fields) && fields.every((field) => !isNil(field) && field.isValid)
 
 export default areValid
